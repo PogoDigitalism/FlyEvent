@@ -30,7 +30,7 @@ function Event.Fire(self: CLS, clean_up: boolean, ...): ()
 	end
 
 	if self._waitingThreads then
-		for _, thread in pairs(self._waitingThreads) do
+		for _, thread in self._waitingThreads do
 			coroutine.resume(
 				thread, 
 				...
