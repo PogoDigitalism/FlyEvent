@@ -1,7 +1,9 @@
 Usage is simple;
 
 ```luau
-local Event = require(script.Event)
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local Event = require(ReplicatedStorage.Event)
 local my_event = Event.register()
 
 -- CONNECTION OPTIONS --
