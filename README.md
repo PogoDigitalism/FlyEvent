@@ -2,7 +2,7 @@ Usage is simple;
 
 ```luau
 local Event = require(script.Event)
-local my_event = Event.new()
+local my_event = Event.register()
 
 -- CONNECTION OPTIONS --
 
