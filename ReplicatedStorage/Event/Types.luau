@@ -1,5 +1,5 @@
 export type Connection = {
-	Function: (...any) -> (),
+	Function: (T...) -> (),
 	Connected: boolean,
 	Once: boolean
 }
