@@ -4,15 +4,17 @@ Usage is simple;
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Event = require(ReplicatedStorage.Event)
-local my_event = Event.register()
+local my_event = Event.register({
+    message = nil :: string
+})
 
 -- CONNECTION OPTIONS --
 
-local connection = my_event:Connect(function(message)
-    print("Message: " .. message)
+local connection = my_event:Connect(function(data)
+    print("Message: " .. data.message)
 end)
-local connection = my_event:Once(function(message)
-    print("Message: " .. message)
+local connection = my_event:Once(function(data)
+    print("Message: " .. data.message)
 end)
 
 local message = my_event:Wait()
@@ -20,7 +22,8 @@ print("Message: " .. message)
 
 -- END --
 
-my_event:Fire("Hello World!")
+local data = {"Hello World!"}
+my_event:Fire(data)
 
 -- CLEAN UP --
 my_event:DisconnectAll()
