@@ -5,7 +5,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Event = require(ReplicatedStorage.Event)
 local my_event = Event.register({
-    message = nil :: string
+    message = nil :: string -- registering an event with such a table enables type hints support across your whole Roblox project!
 })
 
 -- CONNECTION OPTIONS --
@@ -22,7 +22,7 @@ print("Message: " .. message)
 
 -- END --
 
-local data = {"Hello World!"}
+local data = {message="Hello World!"}
 my_event:Fire(data)
 
 -- CLEAN UP --
