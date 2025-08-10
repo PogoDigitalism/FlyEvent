@@ -118,8 +118,8 @@ function Event.Destroy(self: Event): ()
 	self._connections = nil
 	self._waitingThreads = nil
 	setmetatable(self, nil)
-	table.freeze(self)
 	table.clear(self)
+	table.freeze(self)
 end
 
 return Event
